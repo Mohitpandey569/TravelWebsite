@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<Style>
+body{
+    margin: 0;
+    padding: 0;
+    background-color:#6abadeba;
+    font-family: 'Arial';
+    background-image: url(images/Login-img.jpg);
+    background-position: center;
+} 
+div{
+    width: 382px;
+    overflow: hidden;
+    margin: auto;
+    margin: 20 0 0 450px;
+    padding: 80px;
+    background: #23463f;
+    border-radius: 15px ;
+}
+h1{
+    text-align: center;
+    color: #277582;
+    padding: 20px;
+}
+input{
+    border-radius: 12px;
+    height: 20px;
+    padding: 10px;
+}
+label{
+    font-size: 20px;
+    color: white;
+}
+button{
+
+    margin: 20px 0px 0px 150px;
+    font-size: 22px;
+    border-radius: 10px;
+    
+}
+</Style>
+<body>
+    <h1>Login</h1>
+    <div>
+        <label for="uname">Username:</label>
+         <input id="uname"><br><br>
+         <label for="password">Password:</label>
+         <input id="pass" type="password"><br>
+         <button type="submit" onclick="fun()">Submit</button>
+    </div>
+
+    <script>
+        function fun(){
+        let name = document.getElementById('uname').value;
+        let pass = document.getElementById('pass').value;
+        // Save the name in localStorage.
+        let rname = localStorage.getItem('name');
+        console.log(rname)
+        let password = localStorage.getItem('password');
+        console.log(password)
+        if (name==rname && password==pass){
+            alert("Login Success full")
+          window.location.assign("index.html")
+        }
+        else{
+            document.write("Invalid username or password")
+        }
+        }
+       
+    </script>
+</body>
+</html>
+
+
